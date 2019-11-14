@@ -1,0 +1,11 @@
+---
+applications:
+- name: simple-cf-flask
+  env:
+    FLASK_APP: application.py
+    FLASK_RUN_PORT: 8080
+  routes:
+  - route: simple-cf-flask.cloudapps.digital
+  health-check-type: http
+  health-check-http-endpoint: /_status
+  timeout: 10
